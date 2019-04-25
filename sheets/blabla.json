@@ -1,0 +1,42 @@
+{
+  "nodes": {
+    "n": "4",
+    "r": "range(0,n)"
+  },
+  "calculated": {
+    "n": 4,
+    "r": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3
+    }
+  },
+  "layout": {
+    "n": {
+      "position": [
+        3,
+        4,
+        3,
+        4
+      ]
+    },
+    "r": {
+      "position": [
+        4,
+        4,
+        13,
+        4
+      ],
+      "expansion": {
+        "vertical": true
+      }
+    }
+  },
+  "staticCells": {
+    "3:3": {
+      "value": "n",
+      "formula": "n"
+    }
+  }
+}
