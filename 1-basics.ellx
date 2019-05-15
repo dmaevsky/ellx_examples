@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "nodes": {
+    "b": "4",
+    "$1": "Math.sqrt(a*a + b*b)",
+    "a": "3",
+    "gl": "{x:[-0.9061798459386639927976,-0.5384693101056830910363,0,0.5384693101056830910363,0.9061798459386639927976],w:[0.2369268850561890875143,0.4786286704993664680413,0.5688888888888888888889,0.4786286704993664680413,0.2369268850561890875143]}",
+    "func": "range(5).map(deg=>x=>range(deg).reduce(acc=>acc*x,1))",
+    "power2": "func.map(f=>f(2))",
+    "result": "func.map(f => gl.x.map(f).reduce((acc, y, i)=>acc + y*gl.w[i], 0))",
+    "n": "5",
+    "cauchy": "range(n).map(i => range(n).map(j => 1 / (1 + i + j)))",
+    "det": "math.det(cauchy)"
+  },
+  "calculated": {
+    "b": 4,
+    "$1": 5,
+    "a": 3,
+    "gl": {
+      "x": {
+        "0": -0.906179845938664,
+        "1": -0.5384693101056831,
+        "2": 0,
+        "3": 0.5384693101056831,
+        "4": 0.906179845938664
+      },
+      "w": {
+        "0": 0.23692688505618908,
+        "1": 0.47862867049936647,
+        "2": 0.5688888888888889,
+        "3": 0.47862867049936647,
+        "4": 0.23692688505618908
+      }
+    },
+    "func": {
+      "0": "@@@func",
+      "1": "@@@func",
+      "2": "@@@func",
+      "3": "@@@func",
+      "4": "@@@func"
+    },
+    "power2": {
+      "0": 1,
+      "1": 2,
+      "2": 4,
+      "3": 8,
+      "4": 16
+    },
+    "result": {
+      "0": 2,
+      "1": -2.7755575615628914e-17,
+      "2": 0.6666666666666666,
+      "3": 2.7755575615628914e-17,
+      "4": 0.4
+    },
+    "n": 5,
+    "cauchy": {
+      "0": {
+        "0": 1,
+        "1": 0.5,
+        "2": 0.3333333333333333,
+        "3": 0.25,
+        "4": 0.2
+      },
+      "1": {
+        "0": 0.5,
+        "1": 0.3333333333333333,
+        "2": 0.25,
+        "3": 0.2,
+        "4": 0.16666666666666666
+      },
+      "2": {
+        "0": 0.3333333333333333,
+        "1": 0.25,
+        "2": 0.2,
+        "3": 0.16666666666666666,
+        "4": 0.14285714285714285
+      },
+      "3": {
+        "0": 0.25,
+        "1": 0.2,
+        "2": 0.16666666666666666,
+        "3": 0.14285714285714285,
+        "4": 0.125
+      },
+      "4": {
+        "0": 0.2,
+        "1": 0.16666666666666666,
+        "2": 0.14285714285714285,
+        "3": 0.125,
+        "4": 0.1111111111111111
+      }
+    },
+    "det": 3.749295132526672e-12
+  },
+  "layout": {
+    "a": {
+      "position": [
+        4,
+        1,
+        4,
+        1
+      ]
+    },
+    "b": {
+      "position": [
+        4,
+        2,
+        4,
+        2
+      ]
+    },
+    "func": {
+      "position": [
+        20,
+        4,
+        24,
+        4
+      ],
+      "expansion": {
+        "vertical": true
+      }
+    },
+    "gl": {
+      "position": [
+        19,
+        1,
+        24,
+        2
+      ],
+      "expansion": {
+        "vertical": false,
+        "labelsTop": true,
+        "secondary": true
+      }
+    },
+    "$1": {
+      "position": [
+        7,
+        1,
+        7,
+        1
+      ]
+    },
+    "power2": {
+      "position": [
+        20,
+        5,
+        24,
+        6
+      ],
+      "expansion": {
+        "vertical": true,
+        "labelsLeft": true
+      }
+    },
+    "n": {
+      "position": [
+        28,
+        1,
+        28,
+        1
+      ]
+    },
+    "det": {
+      "position": [
+        27,
+        4,
+        27,
+        4
+      ]
+    },
+    "result": {
+      "position": [
+        20,
+        7,
+        24,
+        7
+      ],
+      "expansion": {
+        "vertical": true
+      }
+    },
+    "cauchy": {
+      "position": [
+        29,
+        1,
+        34,
+        6
+      ],
+      "expansion": {
+        "vertical": true,
+        "secondary": true,
+        "labelsLeft": true,
+        "labelsTop": true
+      }
+    }
+  },
+  "staticCells": {
+    "19:4": {
+      "value": "Polynomial",
+      "formula": "Polynomial"
+    },
+    "19:6": {
+      "value": "Test (2^j)",
+      "formula": "Test (2^j)"
+    },
+    "19:7": {
+      "value": "Integrals over [-1;1]",
+      "formula": "Integrals over [-1;1]"
+    },
+    "1:1": {
+      "value": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences.",
+      "formula": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences."
+    },
+    "2:1": {
+      "value": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name.",
+      "formula": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name."
+    },
+    "3:1": {
+      "value": "Like this (press F2 to see the formula):",
+      "formula": "Like this (press F2 to see the formula):"
+    },
+    "5:1": {
+      "value": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas",
+      "formula": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas"
+    },
+    "6:1": {
+      "value": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:",
+      "formula": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:"
+    },
+    "9:1": {
+      "value": "Try:",
+      "formula": "Try:"
+    },
+    "10:1": {
+      "value": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression",
+      "formula": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression"
+    },
+    "12:1": {
+      "value": "- renaming nodes: it will be automatically renamed in all dependent formulae",
+      "formula": "- renaming nodes: it will be automatically renamed in all dependent formulae"
+    },
+    "11:2": {
+      "value": "The expression may reference any other nodes on the same sheet by name",
+      "formula": "The expression may reference any other nodes on the same sheet by name"
+    },
+    "14:1": {
+      "value": "Working with arrays, maps, and functions",
+      "formula": "Working with arrays, maps, and functions"
+    },
+    "15:1": {
+      "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts",
+      "formula": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts"
+    },
+    "16:1": {
+      "value": "Use Ctrl-Shift-A/S to toggle left/top labels",
+      "formula": "Use Ctrl-Shift-A/S to toggle left/top labels"
+    },
+    "27:1": {
+      "value": "Cachy matrix",
+      "formula": "Cachy matrix"
+    },
+    "27:3": {
+      "value": "Determinant",
+      "formula": "Determinant"
+    },
+    "18:1": {
+      "value": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature",
+      "formula": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature"
+    }
+  }
+}
