@@ -10,7 +10,10 @@
     "result": "func.map(f => gl.x.map(f).reduce((acc, y, i)=>acc + y*gl.w[i], 0))",
     "n": "5",
     "cauchy": "range(n).map(i => range(n).map(j => 1 / (1 + i + j)))",
-    "det": "math.det(cauchy)"
+    "det": "math.det(cauchy)",
+    "ball": "{mass: 5, speed: 25}",
+    "momentum": "b => b.mass * b.speed",
+    "$2": "momentum(ball)"
   },
   "calculated": {
     "b": 4,
@@ -91,7 +94,13 @@
         "4": 0.1111111111111111
       }
     },
-    "det": 3.749295132526672e-12
+    "det": 3.749295132526672e-12,
+    "ball": {
+      "mass": 5,
+      "speed": 25
+    },
+    "momentum": "@@@func",
+    "$2": 125
   },
   "layout": {
     "a": {
@@ -162,12 +171,28 @@
         1
       ]
     },
+    "$2": {
+      "position": [
+        39,
+        3,
+        39,
+        3
+      ]
+    },
     "det": {
       "position": [
         27,
         4,
         27,
         4
+      ]
+    },
+    "momentum": {
+      "position": [
+        38,
+        3,
+        38,
+        3
       ]
     },
     "result": {
@@ -194,9 +219,25 @@
         "labelsLeft": true,
         "labelsTop": true
       }
+    },
+    "ball": {
+      "position": [
+        38,
+        1,
+        39,
+        2
+      ],
+      "expansion": {
+        "vertical": true,
+        "labelsLeft": true
+      }
     }
   },
   "staticCells": {
+    "39:4": {
+      "value": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'",
+      "formula": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'"
+    },
     "19:4": {
       "value": "Polynomial",
       "formula": "Polynomial"
@@ -233,9 +274,21 @@
       "value": "Try:",
       "formula": "Try:"
     },
+    "41:1": {
+      "value": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])",
+      "formula": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])"
+    },
+    "42:1": {
+      "value": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]",
+      "formula": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]"
+    },
     "10:1": {
       "value": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression",
       "formula": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression"
+    },
+    "43:1": {
+      "value": "- the former would define 2 named nodes, and the latter 3.",
+      "formula": "- the former would define 2 named nodes, and the latter 3."
     },
     "12:1": {
       "value": "- renaming nodes: it will be automatically renamed in all dependent formulae",
@@ -249,9 +302,17 @@
       "value": "Working with arrays, maps, and functions",
       "formula": "Working with arrays, maps, and functions"
     },
+    "36:1": {
+      "value": "Future development",
+      "formula": "Future development"
+    },
     "15:1": {
       "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts",
       "formula": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts"
+    },
+    "37:1": {
+      "value": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:",
+      "formula": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:"
     },
     "16:1": {
       "value": "Use Ctrl-Shift-A/S to toggle left/top labels",

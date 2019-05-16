@@ -1,0 +1,341 @@
+{
+  "version": 1,
+  "nodes": {
+    "meta": "{operator: { binary: { '+': (l, r)=>l+r }}}",
+    "sales": "{Peter: { Jan: 10, Feb: 12 }, John: { Jan: 22, Feb: 55 }}",
+    "total": "Object.keys(sales).reduce((sum, name)=>sum + sales[name],0)",
+    "rnorm": "matrix(r) * r",
+    "r": "range(n)",
+    "$1": "42 + (r+1)*r",
+    "n": "6",
+    "c": "complex('1+2i')",
+    "cconj": "~c",
+    "cc": "c*cconj",
+    "delayed": "(expression, delay) => new Promise(resolve => setTimeout(() => resolve(expression()), delay))",
+    "d1": "1000",
+    "d2": "2000",
+    "exp1": "delayed(()=>d1 + x, d1)",
+    "exp2": "delayed(()=>d2 + x, d2)",
+    "$3": "exp1 * exp1",
+    "$4": "exp1 + exp2",
+    "x": "12",
+    "url": "'https://ipinfo.io/ip'",
+    "message": "'My IP address is: ' + fetch(url).text().trim()"
+  },
+  "calculated": {
+    "meta": {
+      "operator": {
+        "binary": {
+          "+": "@@@func"
+        }
+      }
+    },
+    "sales": {
+      "Peter": {
+        "Jan": 10,
+        "Feb": 12
+      },
+      "John": {
+        "Jan": 22,
+        "Feb": 55
+      }
+    },
+    "total": {
+      "Jan": 32,
+      "Feb": 67
+    },
+    "rnorm": 55,
+    "r": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5
+    },
+    "$1": {
+      "0": 42,
+      "1": 44,
+      "2": 48,
+      "3": 54,
+      "4": 62,
+      "5": 72
+    },
+    "n": 6,
+    "c": {
+      "re": 1,
+      "im": 2
+    },
+    "cconj": {
+      "re": 1,
+      "im": -2
+    },
+    "cc": {
+      "re": 5,
+      "im": 0
+    },
+    "delayed": "@@@func",
+    "d1": 1000,
+    "d2": 2000,
+    "exp1": 1012,
+    "exp2": 2012,
+    "$3": 1024144,
+    "$4": 3024,
+    "x": 12,
+    "url": "https://ipinfo.io/ip",
+    "message": "My IP address is: 210.149.254.80"
+  },
+  "layout": {
+    "cc": {
+      "position": [
+        17,
+        2,
+        17,
+        2
+      ]
+    },
+    "delayed": {
+      "position": [
+        24,
+        1,
+        24,
+        1
+      ]
+    },
+    "c": {
+      "position": [
+        15,
+        2,
+        15,
+        2
+      ]
+    },
+    "total": {
+      "position": [
+        7,
+        8,
+        7,
+        9
+      ],
+      "expansion": {
+        "vertical": false
+      }
+    },
+    "meta": {
+      "position": [
+        9,
+        1,
+        9,
+        1
+      ]
+    },
+    "message": {
+      "position": [
+        34,
+        1,
+        34,
+        1
+      ]
+    },
+    "cconj": {
+      "position": [
+        16,
+        2,
+        16,
+        2
+      ]
+    },
+    "sales": {
+      "position": [
+        4,
+        7,
+        6,
+        9
+      ],
+      "expansion": {
+        "vertical": true,
+        "labelsLeft": true,
+        "secondary": true,
+        "labelsTop": true
+      }
+    },
+    "d1": {
+      "position": [
+        27,
+        1,
+        27,
+        1
+      ]
+    },
+    "$1": {
+      "position": [
+        6,
+        2,
+        6,
+        2
+      ]
+    },
+    "d2": {
+      "position": [
+        28,
+        1,
+        28,
+        1
+      ]
+    },
+    "n": {
+      "position": [
+        5,
+        1,
+        5,
+        1
+      ]
+    },
+    "rnorm": {
+      "position": [
+        15,
+        1,
+        15,
+        1
+      ]
+    },
+    "$3": {
+      "position": [
+        27,
+        3,
+        27,
+        3
+      ]
+    },
+    "url": {
+      "position": [
+        33,
+        1,
+        33,
+        1
+      ]
+    },
+    "$4": {
+      "position": [
+        28,
+        3,
+        28,
+        3
+      ]
+    },
+    "r": {
+      "position": [
+        5,
+        2,
+        5,
+        2
+      ]
+    },
+    "exp1": {
+      "position": [
+        27,
+        2,
+        27,
+        2
+      ]
+    },
+    "exp2": {
+      "position": [
+        28,
+        2,
+        28,
+        2
+      ]
+    },
+    "x": {
+      "position": [
+        25,
+        2,
+        25,
+        2
+      ]
+    }
+  },
+  "staticCells": {
+    "1:1": {
+      "value": "Operator overloading and automatic asynchronous transforms",
+      "formula": "Operator overloading and automatic asynchronous transforms"
+    },
+    "2:1": {
+      "value": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\"",
+      "formula": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\""
+    },
+    "3:1": {
+      "value": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment",
+      "formula": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment"
+    },
+    "4:1": {
+      "value": "For native Arrays and Objects the operators are applied element-wise by default:",
+      "formula": "For native Arrays and Objects the operators are applied element-wise by default:"
+    },
+    "8:1": {
+      "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g.",
+      "formula": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
+    },
+    "30:1": {
+      "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:",
+      "formula": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
+    },
+    "31:1": {
+      "value": "(Caveat: the server must support CORS requests in order for this to work)",
+      "formula": "(Caveat: the server must support CORS requests in order for this to work)"
+    },
+    "21:1": {
+      "value": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature.",
+      "formula": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature."
+    },
+    "32:1": {
+      "value": "Example:",
+      "formula": "Example:"
+    },
+    "11:1": {
+      "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)",
+      "formula": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
+    },
+    "22:1": {
+      "value": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel",
+      "formula": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel"
+    },
+    "12:1": {
+      "value": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex",
+      "formula": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex"
+    },
+    "23:1": {
+      "value": "The following function calculates 'expression' after 'delay' in ms:",
+      "formula": "The following function calculates 'expression' after 'delay' in ms:"
+    },
+    "13:1": {
+      "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:",
+      "formula": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
+    },
+    "35:1": {
+      "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way",
+      "formula": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
+    },
+    "26:1": {
+      "value": "delay",
+      "formula": "delay"
+    },
+    "26:2": {
+      "value": "expression",
+      "formula": "expression"
+    },
+    "25:3": {
+      "value": "<- try changing x here",
+      "formula": "<- try changing x here"
+    },
+    "26:3": {
+      "value": "dependent calculations",
+      "formula": "dependent calculations"
+    },
+    "19:1": {
+      "value": "Async transform",
+      "formula": "Async transform"
+    }
+  }
+}
