@@ -83,7 +83,7 @@
     "$4": 3024,
     "x": 12,
     "url": "https://ipinfo.io/ip",
-    "message": "My IP address is: 210.149.254.80"
+    "message": "My IP address is: 180.47.159.67"
   },
   "layout": {
     "cc": {
@@ -258,84 +258,64 @@
   },
   "staticCells": {
     "1:1": {
-      "value": "Operator overloading and automatic asynchronous transforms",
-      "formula": "Operator overloading and automatic asynchronous transforms"
+      "value": "Operator overloading and automatic asynchronous transforms"
     },
     "2:1": {
-      "value": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\"",
-      "formula": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\""
+      "value": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\""
     },
     "3:1": {
-      "value": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment",
-      "formula": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment"
+      "value": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment"
     },
     "4:1": {
-      "value": "For native Arrays and Objects the operators are applied element-wise by default:",
-      "formula": "For native Arrays and Objects the operators are applied element-wise by default:"
+      "value": "For native Arrays and Objects the operators are applied element-wise by default:"
     },
     "8:1": {
-      "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g.",
-      "formula": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
+      "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
     },
     "30:1": {
-      "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:",
-      "formula": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
+      "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
     },
     "31:1": {
-      "value": "(Caveat: the server must support CORS requests in order for this to work)",
-      "formula": "(Caveat: the server must support CORS requests in order for this to work)"
+      "value": "(Caveat: the server must support CORS requests in order for this to work)"
     },
     "21:1": {
-      "value": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature.",
-      "formula": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature."
+      "value": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature."
     },
     "32:1": {
-      "value": "Example:",
-      "formula": "Example:"
+      "value": "Example:"
     },
     "11:1": {
-      "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)",
-      "formula": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
+      "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
     },
     "22:1": {
-      "value": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel",
-      "formula": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel"
+      "value": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel"
     },
     "12:1": {
-      "value": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex",
-      "formula": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex"
+      "value": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex"
     },
     "23:1": {
-      "value": "The following function calculates 'expression' after 'delay' in ms:",
-      "formula": "The following function calculates 'expression' after 'delay' in ms:"
+      "value": "The following function calculates 'expression' after 'delay' in ms:"
     },
     "13:1": {
-      "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:",
-      "formula": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
+      "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
     },
     "35:1": {
-      "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way",
-      "formula": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
+      "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
     },
     "26:1": {
-      "value": "delay",
-      "formula": "delay"
+      "value": "delay"
     },
     "26:2": {
-      "value": "expression",
-      "formula": "expression"
+      "value": "expression"
     },
     "25:3": {
-      "value": "<- try changing x here",
-      "formula": "<- try changing x here"
+      "value": "<- try changing x here"
     },
     "26:3": {
-      "value": "dependent calculations",
-      "formula": "dependent calculations"
+      "value": "dependent calculations"
     },
     "19:1": {
-      "value": "Async transform",
-      "formula": "Async transform"
+      "value": "Async transform"
     }
   }
 }

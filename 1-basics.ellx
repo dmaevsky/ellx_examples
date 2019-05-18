@@ -235,100 +235,76 @@
   },
   "staticCells": {
     "39:4": {
-      "value": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'",
-      "formula": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'"
+      "value": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'"
     },
     "19:4": {
-      "value": "Polynomial",
-      "formula": "Polynomial"
+      "value": "Polynomial"
     },
     "19:6": {
-      "value": "Test (2^j)",
-      "formula": "Test (2^j)"
+      "value": "Test (2^j)"
     },
     "19:7": {
-      "value": "Integrals over [-1;1]",
-      "formula": "Integrals over [-1;1]"
+      "value": "Integrals over [-1;1]"
     },
     "1:1": {
-      "value": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences.",
-      "formula": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences."
+      "value": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences."
     },
     "2:1": {
-      "value": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name.",
-      "formula": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name."
+      "value": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name."
     },
     "3:1": {
-      "value": "Like this (press F2 to see the formula):",
-      "formula": "Like this (press F2 to see the formula):"
+      "value": "Like this (press F2 to see the formula):"
     },
     "5:1": {
-      "value": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas",
-      "formula": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas"
+      "value": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas"
     },
     "6:1": {
-      "value": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:",
-      "formula": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:"
+      "value": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:"
     },
     "9:1": {
-      "value": "Try:",
-      "formula": "Try:"
+      "value": "Try:"
     },
     "41:1": {
-      "value": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])",
-      "formula": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])"
+      "value": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])"
     },
     "42:1": {
-      "value": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]",
-      "formula": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]"
+      "value": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]"
     },
     "10:1": {
-      "value": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression",
-      "formula": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression"
+      "value": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression"
     },
     "43:1": {
-      "value": "- the former would define 2 named nodes, and the latter 3.",
-      "formula": "- the former would define 2 named nodes, and the latter 3."
+      "value": "- the former would define 2 named nodes, and the latter 3."
     },
     "12:1": {
-      "value": "- renaming nodes: it will be automatically renamed in all dependent formulae",
-      "formula": "- renaming nodes: it will be automatically renamed in all dependent formulae"
+      "value": "- renaming nodes: it will be automatically renamed in all dependent formulae"
     },
     "11:2": {
-      "value": "The expression may reference any other nodes on the same sheet by name",
-      "formula": "The expression may reference any other nodes on the same sheet by name"
+      "value": "The expression may reference any other nodes on the same sheet by name"
     },
     "14:1": {
-      "value": "Working with arrays, maps, and functions",
-      "formula": "Working with arrays, maps, and functions"
+      "value": "Working with arrays, maps, and functions"
     },
     "36:1": {
-      "value": "Future development",
-      "formula": "Future development"
+      "value": "Future development"
     },
     "15:1": {
-      "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts",
-      "formula": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts"
+      "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts"
     },
     "37:1": {
-      "value": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:",
-      "formula": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:"
+      "value": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:"
     },
     "16:1": {
-      "value": "Use Ctrl-Shift-A/S to toggle left/top labels",
-      "formula": "Use Ctrl-Shift-A/S to toggle left/top labels"
+      "value": "Use Ctrl-Shift-A/S to toggle left/top labels"
     },
     "27:1": {
-      "value": "Cachy matrix",
-      "formula": "Cachy matrix"
+      "value": "Cachy matrix"
     },
     "27:3": {
-      "value": "Determinant",
-      "formula": "Determinant"
+      "value": "Determinant"
     },
     "18:1": {
-      "value": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature",
-      "formula": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature"
+      "value": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature"
     }
   }
 }
