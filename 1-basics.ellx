@@ -289,13 +289,13 @@
       "value": "Future development"
     },
     "15:1": {
-      "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Shift-Down/Right shortcuts"
+      "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Alt-Down/Right shortcuts"
     },
     "37:1": {
       "value": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:"
     },
     "16:1": {
-      "value": "Use Ctrl-Shift-A/S to toggle left/top labels"
+      "value": "Use Ctrl-Alt-Z/X to toggle left/top labels"
     },
     "27:1": {
       "value": "Cachy matrix"
