@@ -12,15 +12,12 @@
     "cconj": "~c",
     "cc": "c*cconj",
     "delayed": "(expression, delay) => new Promise(resolve => setTimeout(() => resolve(expression()), delay))",
-    "d1": "1000",
-    "d2": "2000",
-    "exp1": "delayed(()=>d1 + x, d1)",
-    "exp2": "delayed(()=>d2 + x, d2)",
-    "$3": "exp1 * exp1",
-    "$4": "exp1 + exp2",
-    "x": "12",
+    "x": "15",
     "url": "'https://ipinfo.io/ip'",
-    "message": "'My IP address is: ' + fetch(url).text().trim()"
+    "message": "'My IP address is: ' + fetch(url).text().trim()",
+    "ms": "1000*(1+range(3))",
+    "expr": "ms.map(delay=>delayed(()=>delay + x, delay))",
+    "$5": "expr*expr"
   },
   "calculated": {
     "meta": {
@@ -75,74 +72,32 @@
       "im": 0
     },
     "delayed": "@@@func",
-    "d1": 1000,
-    "d2": 2000,
-    "exp1": 1012,
-    "exp2": 2012,
-    "$3": 1024144,
-    "$4": 3024,
-    "x": 12,
+    "x": 15,
     "url": "https://ipinfo.io/ip",
-    "message": "My IP address is: 180.47.159.67"
+    "message": "My IP address is: 126.225.84.245",
+    "ms": [
+      1000,
+      2000,
+      3000
+    ],
+    "expr": [
+      {},
+      {},
+      {}
+    ],
+    "$5": [
+      {},
+      {},
+      {}
+    ]
   },
   "layout": {
-    "cc": {
-      "position": [
-        17,
-        2,
-        17,
-        2
-      ]
-    },
-    "delayed": {
-      "position": [
-        24,
-        1,
-        24,
-        1
-      ]
-    },
-    "c": {
-      "position": [
-        15,
-        2,
-        15,
-        2
-      ]
-    },
-    "total": {
-      "position": [
-        7,
-        8,
-        7,
-        9
-      ],
-      "expansion": {
-        "vertical": false
-      }
-    },
     "meta": {
       "position": [
         9,
         1,
         9,
         1
-      ]
-    },
-    "message": {
-      "position": [
-        34,
-        1,
-        34,
-        1
-      ]
-    },
-    "cconj": {
-      "position": [
-        16,
-        2,
-        16,
-        2
       ]
     },
     "sales": {
@@ -159,37 +114,16 @@
         "labelsTop": true
       }
     },
-    "d1": {
+    "total": {
       "position": [
-        27,
-        1,
-        27,
-        1
-      ]
-    },
-    "$1": {
-      "position": [
-        6,
-        2,
-        6,
-        2
-      ]
-    },
-    "d2": {
-      "position": [
-        28,
-        1,
-        28,
-        1
-      ]
-    },
-    "n": {
-      "position": [
-        5,
-        1,
-        5,
-        1
-      ]
+        7,
+        8,
+        7,
+        9
+      ],
+      "expansion": {
+        "vertical": false
+      }
     },
     "rnorm": {
       "position": [
@@ -197,30 +131,6 @@
         1,
         15,
         1
-      ]
-    },
-    "$3": {
-      "position": [
-        27,
-        3,
-        27,
-        3
-      ]
-    },
-    "url": {
-      "position": [
-        33,
-        1,
-        33,
-        1
-      ]
-    },
-    "$4": {
-      "position": [
-        28,
-        3,
-        28,
-        3
       ]
     },
     "r": {
@@ -231,20 +141,52 @@
         2
       ]
     },
-    "exp1": {
+    "$1": {
       "position": [
-        27,
+        6,
         2,
-        27,
+        6,
         2
       ]
     },
-    "exp2": {
+    "n": {
       "position": [
-        28,
+        5,
+        1,
+        5,
+        1
+      ]
+    },
+    "c": {
+      "position": [
+        15,
         2,
-        28,
+        15,
         2
+      ]
+    },
+    "cconj": {
+      "position": [
+        16,
+        2,
+        16,
+        2
+      ]
+    },
+    "cc": {
+      "position": [
+        17,
+        2,
+        17,
+        2
+      ]
+    },
+    "delayed": {
+      "position": [
+        24,
+        1,
+        24,
+        1
       ]
     },
     "x": {
@@ -254,6 +196,55 @@
         25,
         2
       ]
+    },
+    "url": {
+      "position": [
+        34,
+        1,
+        34,
+        1
+      ]
+    },
+    "message": {
+      "position": [
+        35,
+        1,
+        35,
+        1
+      ]
+    },
+    "ms": {
+      "position": [
+        27,
+        1,
+        29,
+        1
+      ],
+      "expansion": {
+        "vertical": true
+      }
+    },
+    "expr": {
+      "position": [
+        27,
+        2,
+        29,
+        2
+      ],
+      "expansion": {
+        "vertical": true
+      }
+    },
+    "$5": {
+      "position": [
+        27,
+        3,
+        29,
+        3
+      ],
+      "expansion": {
+        "vertical": true
+      }
     }
   },
   "staticCells": {
@@ -272,17 +263,8 @@
     "8:1": {
       "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
     },
-    "30:1": {
-      "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
-    },
-    "31:1": {
-      "value": "(Caveat: the server must support CORS requests in order for this to work)"
-    },
     "21:1": {
       "value": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature."
-    },
-    "32:1": {
-      "value": "Example:"
     },
     "11:1": {
       "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
@@ -299,9 +281,6 @@
     "13:1": {
       "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
     },
-    "35:1": {
-      "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
-    },
     "26:1": {
       "value": "delay"
     },
@@ -316,6 +295,18 @@
     },
     "19:1": {
       "value": "Async transform"
+    },
+    "36:1": {
+      "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
+    },
+    "33:1": {
+      "value": "Example:"
+    },
+    "32:1": {
+      "value": "(Caveat: the server must support CORS requests in order for this to work)"
+    },
+    "31:1": {
+      "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
     }
   }
 }
