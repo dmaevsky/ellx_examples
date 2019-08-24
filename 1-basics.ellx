@@ -1,310 +1,307 @@
 {
-  "version": 1,
+  "version": 2,
   "nodes": {
+    "a": "3",
     "b": "4",
     "$1": "Math.sqrt(a*a + b*b)",
-    "a": "3",
     "gl": "{x:[-0.9061798459386639927976,-0.5384693101056830910363,0,0.5384693101056830910363,0.9061798459386639927976],w:[0.2369268850561890875143,0.4786286704993664680413,0.5688888888888888888889,0.4786286704993664680413,0.2369268850561890875143]}",
     "func": "range(5).map(deg=>x=>range(deg).reduce(acc=>acc*x,1))",
     "power2": "func.map(f=>f(2))",
     "result": "func.map(f => gl.x.map(f).reduce((acc, y, i)=>acc + y*gl.w[i], 0))",
+    "det": "math.det(cauchy)",
     "n": "5",
     "cauchy": "range(n).map(i => range(n).map(j => 1 / (1 + i + j)))",
-    "det": "math.det(cauchy)",
     "ball": "{mass: 5, speed: 25}",
     "momentum": "b => b.mass * b.speed",
     "$2": "momentum(ball)"
   },
-  "calculated": {
-    "b": 4,
-    "$1": 5,
-    "a": 3,
-    "gl": {
-      "x": [
-        -0.906179845938664,
-        -0.5384693101056831,
-        0,
-        0.5384693101056831,
-        0.906179845938664
-      ],
-      "w": [
-        0.23692688505618908,
-        0.47862867049936647,
-        0.5688888888888889,
-        0.47862867049936647,
-        0.23692688505618908
-      ]
-    },
-    "func": [
-      "@@@func",
-      "@@@func",
-      "@@@func",
-      "@@@func",
-      "@@@func"
+  "layout": [,
+    [,
+      {
+        "value": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences."
+      }
     ],
-    "power2": [
-      1,
-      2,
-      4,
-      8,
-      16
+    [,
+      {
+        "value": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name."
+      }
     ],
-    "result": [
-      2,
-      -2.7755575615628914e-17,
-      0.6666666666666666,
-      2.7755575615628914e-17,
-      0.4
+    [,
+      {
+        "value": "Like this (press F2 to see the formula):"
+      }
     ],
-    "n": 5,
-    "cauchy": [
-      [
-        1,
-        0.5,
-        0.3333333333333333,
-        0.25,
-        0.2
-      ],
-      [
-        0.5,
-        0.3333333333333333,
-        0.25,
-        0.2,
-        0.16666666666666666
-      ],
-      [
-        0.3333333333333333,
-        0.25,
-        0.2,
-        0.16666666666666666,
-        0.14285714285714285
-      ],
-      [
-        0.25,
-        0.2,
-        0.16666666666666666,
-        0.14285714285714285,
-        0.125
-      ],
-      [
-        0.2,
-        0.16666666666666666,
-        0.14285714285714285,
-        0.125,
-        0.1111111111111111
-      ]
+    [,
+      {
+        "value": 3,
+        "node": "a"
+      },
+      {
+        "value": 4,
+        "node": "b"
+      }
     ],
-    "det": 3.749295132526672e-12,
-    "ball": {
-      "mass": 5,
-      "speed": 25
-    },
-    "momentum": "@@@func",
-    "$2": 125
-  },
-  "layout": {
-    "a": {
-      "position": [
-        4,
-        1,
-        4,
-        1
-      ]
-    },
-    "b": {
-      "position": [
-        4,
-        2,
-        4,
-        2
-      ]
-    },
-    "func": {
-      "position": [
-        20,
-        4,
-        24,
-        4
-      ],
-      "expansion": {
-        "vertical": true
+    [,
+      {
+        "value": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas"
       }
-    },
-    "gl": {
-      "position": [
-        19,
-        1,
-        24,
-        2
-      ],
-      "expansion": {
-        "vertical": false,
-        "labelsTop": true,
-        "secondary": true
+    ],
+    [,
+      {
+        "value": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:"
       }
-    },
-    "$1": {
-      "position": [
-        7,
-        1,
-        7,
-        1
-      ]
-    },
-    "power2": {
-      "position": [
-        20,
-        5,
-        24,
-        6
-      ],
-      "expansion": {
-        "vertical": true,
-        "labelsLeft": true
+    ],
+    [,
+      {
+        "value": 5,
+        "node": "$1"
       }
-    },
-    "n": {
-      "position": [
-        28,
-        1,
-        28,
-        1
-      ]
-    },
-    "$2": {
-      "position": [
-        39,
-        3,
-        39,
-        3
-      ]
-    },
-    "det": {
-      "position": [
-        27,
-        4,
-        27,
-        4
-      ]
-    },
-    "momentum": {
-      "position": [
-        38,
-        3,
-        38,
-        3
-      ]
-    },
-    "result": {
-      "position": [
-        20,
-        7,
-        24,
-        7
-      ],
-      "expansion": {
-        "vertical": true
+    ],,
+    [,
+      {
+        "value": "Try:"
       }
-    },
-    "cauchy": {
-      "position": [
-        29,
-        1,
-        34,
-        6
-      ],
-      "expansion": {
-        "vertical": true,
-        "secondary": true,
-        "labelsLeft": true,
-        "labelsTop": true
+    ],
+    [,
+      {
+        "value": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression"
       }
-    },
-    "ball": {
-      "position": [
-        38,
-        1,
-        39,
-        2
-      ],
-      "expansion": {
-        "vertical": true,
-        "labelsLeft": true
+    ],
+    [,,
+      {
+        "value": "The expression may reference any other nodes on the same sheet by name"
       }
-    }
-  },
-  "staticCells": {
-    "39:4": {
-      "value": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'"
-    },
-    "19:4": {
-      "value": "Polynomial"
-    },
-    "19:6": {
-      "value": "Test (2^j)"
-    },
-    "19:7": {
-      "value": "Integrals over [-1;1]"
-    },
-    "1:1": {
-      "value": "Ellx semantic model is only slightly different from the classical Excel spreadsheet. In a lot of ways you will find it intuitive and familiar, so let's outline here the main differences."
-    },
-    "2:1": {
-      "value": "Ellx cells don't use the Excel addressing scheme i.e. A11, $D$4 etc. Instead, all calculation graph nodes - cells that are referenced in other formulas - should be given a name."
-    },
-    "3:1": {
-      "value": "Like this (press F2 to see the formula):"
-    },
-    "5:1": {
-      "value": "Cells in the spreadsheet entered without an '=' sign (not named) are not part of the calculation graph and cannot be referenced in formulas"
-    },
-    "6:1": {
-      "value": "If you start a formula with an '=' sign, but don't name it, a generated name will be assigned:"
-    },
-    "9:1": {
-      "value": "Try:"
-    },
-    "41:1": {
-      "value": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])"
-    },
-    "42:1": {
-      "value": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]"
-    },
-    "10:1": {
-      "value": "- building your own calculation nodes: a node is described by an assignment statement: node_name = expression, where the latter may be any valid Javascript expression"
-    },
-    "43:1": {
-      "value": "- the former would define 2 named nodes, and the latter 3."
-    },
-    "12:1": {
-      "value": "- renaming nodes: it will be automatically renamed in all dependent formulae"
-    },
-    "11:2": {
-      "value": "The expression may reference any other nodes on the same sheet by name"
-    },
-    "14:1": {
-      "value": "Working with arrays, maps, and functions"
-    },
-    "36:1": {
-      "value": "Future development"
-    },
-    "15:1": {
-      "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Alt-Down/Right shortcuts"
-    },
-    "37:1": {
-      "value": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:"
-    },
-    "16:1": {
-      "value": "Use Ctrl-Alt-Z/X to toggle left/top labels"
-    },
-    "27:1": {
-      "value": "Cachy matrix"
-    },
-    "27:3": {
-      "value": "Determinant"
-    },
-    "18:1": {
-      "value": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature"
-    }
-  }
+    ],
+    [,
+      {
+        "value": "- renaming nodes: it will be automatically renamed in all dependent formulae"
+      }
+    ],,
+    [,
+      {
+        "value": "Working with arrays, maps, and functions"
+      }
+    ],
+    [,
+      {
+        "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Alt-Down/Right shortcuts"
+      }
+    ],
+    [,
+      {
+        "value": "Use Ctrl-Alt-Z/X to toggle left/top labels"
+      }
+    ],,
+    [,
+      {
+        "value": "The following example calculates integrals over [-1;1] of x^j, j in {0,1,2,3,4} using Gauss-Legendre quadrature"
+      }
+    ],
+    [,,,,
+      {
+        "value": "Polynomial"
+      },,
+      {
+        "value": "Test (2^j)"
+      },
+      {
+        "value": "Integrals over [-1;1]"
+      }
+    ],
+    [,
+      {
+        "value": {
+          "x": [
+            -0.906179845938664,
+            -0.5384693101056831,
+            0,
+            0.5384693101056831,
+            0.906179845938664
+          ],
+          "w": [
+            0.23692688505618908,
+            0.47862867049936647,
+            0.5688888888888889,
+            0.47862867049936647,
+            0.23692688505618908
+          ]
+        },
+        "node": "gl",
+        "expansion": {
+          "vertical": false,
+          "labelsTop": true,
+          "secondary": true,
+          "height": 5,
+          "width": 2
+        }
+      },,,
+      {
+        "value": [
+          "@@@func",
+          "@@@func",
+          "@@@func",
+          "@@@func",
+          "@@@func"
+        ],
+        "node": "func",
+        "expansion": {
+          "vertical": true,
+          "height": 5,
+          "width": 1
+        }
+      },,
+      {
+        "value": [
+          1,
+          2,
+          4,
+          8,
+          16
+        ],
+        "node": "power2",
+        "expansion": {
+          "vertical": true,
+          "labelsLeft": true,
+          "height": 5,
+          "width": 1
+        }
+      },
+      {
+        "value": [
+          2,
+          -2.7755575615628914e-17,
+          0.6666666666666666,
+          2.7755575615628914e-17,
+          0.4
+        ],
+        "node": "result",
+        "expansion": {
+          "vertical": true,
+          "height": 5,
+          "width": 1
+        }
+      }
+    ],,,,,,,
+    [,
+      {
+        "value": "Cachy matrix"
+      },,
+      {
+        "value": "Determinant"
+      },
+      {
+        "value": 3.749295132526672e-12,
+        "node": "det"
+      }
+    ],
+    [,
+      {
+        "value": 5,
+        "node": "n"
+      }
+    ],,
+    [,,
+      {
+        "value": [
+          [
+            1,
+            0.5,
+            0.3333333333333333,
+            0.25,
+            0.2
+          ],
+          [
+            0.5,
+            0.3333333333333333,
+            0.25,
+            0.2,
+            0.16666666666666666
+          ],
+          [
+            0.3333333333333333,
+            0.25,
+            0.2,
+            0.16666666666666666,
+            0.14285714285714285
+          ],
+          [
+            0.25,
+            0.2,
+            0.16666666666666666,
+            0.14285714285714285,
+            0.125
+          ],
+          [
+            0.2,
+            0.16666666666666666,
+            0.14285714285714285,
+            0.125,
+            0.1111111111111111
+          ]
+        ],
+        "node": "cauchy",
+        "expansion": {
+          "vertical": true,
+          "secondary": true,
+          "labelsLeft": true,
+          "labelsTop": true,
+          "height": 5,
+          "width": 5
+        }
+      }
+    ],,,,,,
+    [,
+      {
+        "value": "Future development"
+      }
+    ],
+    [,
+      {
+        "value": "- when an object constructed in-place is expanded it should be possible to edit individual fields: it will automatically modify the formula for the whole object:"
+      }
+    ],
+    [,,
+      {
+        "value": {
+          "mass": 5,
+          "speed": 25
+        },
+        "node": "ball",
+        "expansion": {
+          "vertical": true,
+          "labelsLeft": true,
+          "height": 2,
+          "width": 1
+        }
+      },
+      {
+        "value": "@@@func",
+        "node": "momentum"
+      }
+    ],
+    [,,,
+      {
+        "value": 125,
+        "node": "$2"
+      },
+      {
+        "value": "Typing 6 instead of 5 for the mass should update it inside the formula for the 'ball'"
+      }
+    ],,
+    [,
+      {
+        "value": "- modifying a cell inside an expanded calculation result should modify the formula in such a way that only that cell is overridden, e.g. cauchy1 = override(cauchy, [[1, 1, 999], [2, 2, 888]])"
+      }
+    ],
+    [,
+      {
+        "value": "- parts of the formulae can be names, and destructuring assignments supported, e.g: [a, b] = [3, 4];  or ball = [mass = 5, speed = 25]"
+      }
+    ],
+    [,
+      {
+        "value": "- the former would define 2 named nodes, and the latter 3."
+      }
+    ]
+  ]
 }

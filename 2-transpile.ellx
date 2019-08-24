@@ -1,312 +1,291 @@
 {
-  "version": 1,
+  "version": 2,
   "nodes": {
-    "meta": "{operator: { binary: { '+': (l, r)=>l+r }}}",
-    "sales": "{Peter: { Jan: 10, Feb: 12 }, John: { Jan: 22, Feb: 55 }}",
-    "total": "Object.keys(sales).reduce((sum, name)=>sum + sales[name],0)",
-    "rnorm": "matrix(r) * r",
-    "r": "range(n)",
-    "$1": "42 + (r+1)*r",
     "n": "6",
+    "r": "range(n)",
+    "sales": "{Peter: { Jan: 10, Feb: 12 }, John: { Jan: 22, Feb: 55 }}",
+    "$1": "42 + (r+1)*r",
+    "total": "Object.keys(sales).reduce((sum, name)=>sum + sales[name],0)",
+    "meta": "{operator: { binary: { '+': (l, r)=>l+r }}}",
+    "rnorm": "matrix(r) * r",
     "c": "complex('1+2i')",
     "cconj": "~c",
     "cc": "c*cconj",
     "delayed": "(expression, delay) => new Promise(resolve => setTimeout(() => resolve(expression()), delay))",
     "x": "15",
-    "url": "'https://ipinfo.io/ip'",
-    "message": "'My IP address is: ' + fetch(url).text().trim()",
     "ms": "1000*(1+range(3))",
     "expr": "ms.map(delay=>delayed(()=>delay + x, delay))",
-    "$5": "expr*expr"
+    "$5": "expr*expr",
+    "url": "'https://ipinfo.io/ip'",
+    "message": "'My IP address is: ' + fetch(url).text().trim()"
   },
-  "calculated": {
-    "meta": {
-      "operator": {
-        "binary": {
-          "+": "@@@func"
+  "layout": [,
+    [,
+      {
+        "value": "Operator overloading and automatic asynchronous transforms"
+      }
+    ],
+    [,
+      {
+        "value": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\""
+      }
+    ],
+    [,
+      {
+        "value": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment"
+      }
+    ],
+    [,
+      {
+        "value": "For native Arrays and Objects the operators are applied element-wise by default:"
+      }
+    ],
+    [,
+      {
+        "value": 6,
+        "node": "n"
+      },
+      {
+        "value": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "node": "r"
+      },,,,,,
+      {
+        "value": {
+          "Peter": {
+            "Jan": 10,
+            "Feb": 12
+          },
+          "John": {
+            "Jan": 22,
+            "Feb": 55
+          }
+        },
+        "node": "sales",
+        "expansion": {
+          "vertical": true,
+          "labelsLeft": true,
+          "secondary": true,
+          "labelsTop": true,
+          "height": 2,
+          "width": 2
         }
       }
-    },
-    "sales": {
-      "Peter": {
-        "Jan": 10,
-        "Feb": 12
+    ],
+    [,,
+      {
+        "value": [
+          42,
+          44,
+          48,
+          54,
+          62,
+          72
+        ],
+        "node": "$1"
+      }
+    ],
+    [,,,,,,,,
+      {
+        "value": {
+          "Jan": 32,
+          "Feb": 67
+        },
+        "node": "total",
+        "expansion": {
+          "vertical": false,
+          "height": 1,
+          "width": 2
+        }
+      }
+    ],
+    [,
+      {
+        "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
+      }
+    ],
+    [,
+      {
+        "value": {
+          "operator": {
+            "binary": {
+              "+": "@@@func"
+            }
+          }
+        },
+        "node": "meta"
+      }
+    ],,
+    [,
+      {
+        "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
+      }
+    ],
+    [,
+      {
+        "value": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex"
+      }
+    ],
+    [,
+      {
+        "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
+      }
+    ],,
+    [,
+      {
+        "value": 55,
+        "node": "rnorm"
       },
-      "John": {
-        "Jan": 22,
-        "Feb": 55
+      {
+        "value": {
+          "re": 1,
+          "im": 2
+        },
+        "node": "c"
       }
-    },
-    "total": {
-      "Jan": 32,
-      "Feb": 67
-    },
-    "rnorm": 55,
-    "r": [
-      0,
-      1,
-      2,
-      3,
-      4,
-      5
     ],
-    "$1": [
-      42,
-      44,
-      48,
-      54,
-      62,
-      72
+    [,,
+      {
+        "value": {
+          "re": 1,
+          "im": -2
+        },
+        "node": "cconj"
+      }
     ],
-    "n": 6,
-    "c": {
-      "re": 1,
-      "im": 2
-    },
-    "cconj": {
-      "re": 1,
-      "im": -2
-    },
-    "cc": {
-      "re": 5,
-      "im": 0
-    },
-    "delayed": "@@@func",
-    "x": 15,
-    "url": "https://ipinfo.io/ip",
-    "message": "My IP address is: 126.225.84.245",
-    "ms": [
-      1000,
-      2000,
-      3000
+    [,,
+      {
+        "value": {
+          "re": 5,
+          "im": 0
+        },
+        "node": "cc"
+      }
+    ],,
+    [,
+      {
+        "value": "Async transform"
+      }
+    ],,
+    [,
+      {
+        "value": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature."
+      }
     ],
-    "expr": [
-      {},
-      {},
-      {}
+    [,
+      {
+        "value": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel"
+      }
     ],
-    "$5": [
-      {},
-      {},
-      {}
+    [,
+      {
+        "value": "The following function calculates 'expression' after 'delay' in ms:"
+      }
+    ],
+    [,
+      {
+        "value": "@@@func",
+        "node": "delayed"
+      }
+    ],
+    [,,
+      {
+        "value": 15,
+        "node": "x"
+      },
+      {
+        "value": "<- try changing x here"
+      }
+    ],
+    [,
+      {
+        "value": "delay"
+      },
+      {
+        "value": "expression"
+      },
+      {
+        "value": "dependent calculations"
+      }
+    ],
+    [,
+      {
+        "value": [
+          1000,
+          2000,
+          3000
+        ],
+        "node": "ms",
+        "expansion": {
+          "vertical": true,
+          "height": 3,
+          "width": 1
+        }
+      },
+      {
+        "value": [
+          1015,
+          2015,
+          3015
+        ],
+        "node": "expr",
+        "expansion": {
+          "vertical": true,
+          "height": 3,
+          "width": 1
+        }
+      },
+      {
+        "value": [
+          1030225,
+          4060225,
+          9090225
+        ],
+        "node": "$5",
+        "expansion": {
+          "vertical": true,
+          "height": 3,
+          "width": 1
+        }
+      }
+    ],,,,
+    [,
+      {
+        "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
+      }
+    ],
+    [,
+      {
+        "value": "(Caveat: the server must support CORS requests in order for this to work)"
+      }
+    ],
+    [,
+      {
+        "value": "Example:"
+      }
+    ],
+    [,
+      {
+        "value": "https://ipinfo.io/ip",
+        "node": "url"
+      }
+    ],
+    [,
+      {
+        "value": "My IP address is: 180.47.159.67",
+        "node": "message"
+      }
+    ],
+    [,
+      {
+        "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
+      }
     ]
-  },
-  "layout": {
-    "meta": {
-      "position": [
-        9,
-        1,
-        9,
-        1
-      ]
-    },
-    "sales": {
-      "position": [
-        4,
-        7,
-        6,
-        9
-      ],
-      "expansion": {
-        "vertical": true,
-        "labelsLeft": true,
-        "secondary": true,
-        "labelsTop": true
-      }
-    },
-    "total": {
-      "position": [
-        7,
-        8,
-        7,
-        9
-      ],
-      "expansion": {
-        "vertical": false
-      }
-    },
-    "rnorm": {
-      "position": [
-        15,
-        1,
-        15,
-        1
-      ]
-    },
-    "r": {
-      "position": [
-        5,
-        2,
-        5,
-        2
-      ]
-    },
-    "$1": {
-      "position": [
-        6,
-        2,
-        6,
-        2
-      ]
-    },
-    "n": {
-      "position": [
-        5,
-        1,
-        5,
-        1
-      ]
-    },
-    "c": {
-      "position": [
-        15,
-        2,
-        15,
-        2
-      ]
-    },
-    "cconj": {
-      "position": [
-        16,
-        2,
-        16,
-        2
-      ]
-    },
-    "cc": {
-      "position": [
-        17,
-        2,
-        17,
-        2
-      ]
-    },
-    "delayed": {
-      "position": [
-        24,
-        1,
-        24,
-        1
-      ]
-    },
-    "x": {
-      "position": [
-        25,
-        2,
-        25,
-        2
-      ]
-    },
-    "url": {
-      "position": [
-        34,
-        1,
-        34,
-        1
-      ]
-    },
-    "message": {
-      "position": [
-        35,
-        1,
-        35,
-        1
-      ]
-    },
-    "ms": {
-      "position": [
-        27,
-        1,
-        29,
-        1
-      ],
-      "expansion": {
-        "vertical": true
-      }
-    },
-    "expr": {
-      "position": [
-        27,
-        2,
-        29,
-        2
-      ],
-      "expansion": {
-        "vertical": true
-      }
-    },
-    "$5": {
-      "position": [
-        27,
-        3,
-        29,
-        3
-      ],
-      "expansion": {
-        "vertical": true
-      }
-    }
-  },
-  "staticCells": {
-    "1:1": {
-      "value": "Operator overloading and automatic asynchronous transforms"
-    },
-    "2:1": {
-      "value": "Ellx formulas actually support an extension of JavaScript grammar, implementing operator overloading technique known as \"transpilation at first evaluation\""
-    },
-    "3:1": {
-      "value": "By looking at the type and constructor of operators' arguments at first evaluation Ellx is able to transiple the original formula on the fly to implement special treatment"
-    },
-    "4:1": {
-      "value": "For native Arrays and Objects the operators are applied element-wise by default:"
-    },
-    "8:1": {
-      "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
-    },
-    "21:1": {
-      "value": "Ellx is designed to simplify complex system integration tasks, which are often asynchronous by nature."
-    },
-    "11:1": {
-      "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
-    },
-    "22:1": {
-      "value": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel"
-    },
-    "12:1": {
-      "value": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex"
-    },
-    "23:1": {
-      "value": "The following function calculates 'expression' after 'delay' in ms:"
-    },
-    "13:1": {
-      "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
-    },
-    "26:1": {
-      "value": "delay"
-    },
-    "26:2": {
-      "value": "expression"
-    },
-    "25:3": {
-      "value": "<- try changing x here"
-    },
-    "26:3": {
-      "value": "dependent calculations"
-    },
-    "19:1": {
-      "value": "Async transform"
-    },
-    "36:1": {
-      "value": "The formula looks as if it were synchronous, which makes possible to write code agnostic of execution timing in a purely reactive functional way"
-    },
-    "33:1": {
-      "value": "Example:"
-    },
-    "32:1": {
-      "value": "(Caveat: the server must support CORS requests in order for this to work)"
-    },
-    "31:1": {
-      "value": "As a consequence, you can easily use the results of network requests in your formulas as if they were synchronous:"
-    }
-  }
+  ]
 }

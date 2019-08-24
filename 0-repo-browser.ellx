@@ -1,41 +1,62 @@
 {
-  "version": 1,
-  "nodes": {},
-  "calculated": {},
-  "layout": {},
-  "staticCells": {
-    "1:1": {
-      "value": "<- On the left is the repository browser"
-    },
-    "2:1": {
-      "value": "For now there are 2 hard-coded repositories:"
-    },
-    "3:1": {
-      "value": "\"LocalDB\" saves the sheets locally in the browser's local IndexedDB storage area"
-    },
-    "4:1": {
-      "value": "\"Examples on Github\" is a read-only repo, connected to https://github.com/dmaevsky/ellx_examples."
-    },
-    "5:1": {
-      "value": "If you find errors or typos in the examples, feel free to clone this repo and submit PRs. Here's how to do it:"
-    },
-    "6:2": {
-      "value": "- Clone the repo, e.g. git clone git@github.com:dmaevsky/ellx_examples.git"
-    },
-    "7:2": {
-      "value": "- Make changes using Ellx, and download the changed document into the locally cloned directory ellx_examples"
-    },
-    "8:2": {
-      "value": "- git commit -a -m \"Found a typo\" && git push"
-    },
-    "9:2": {
-      "value": "- Submit a PR"
-    },
-    "11:1": {
-      "value": "This process illustrates how Ellx is designed from ground up to be perfectly source control friendly"
-    },
-    "13:1": {
-      "value": "<- Click on the icons next to the items in the repo explorer to see available actions"
-    }
-  }
+  "version": 2,
+  "nodes": {
+  },
+  "layout": [,
+    [,
+      {
+        "value": "<- On the left is the repository browser"
+      }
+    ],
+    [,
+      {
+        "value": "For now there are 2 hard-coded repositories:"
+      }
+    ],
+    [,
+      {
+        "value": "\"LocalDB\" saves the sheets locally in the browser's local IndexedDB storage area"
+      }
+    ],
+    [,
+      {
+        "value": "\"Examples on Github\" is a read-only repo, connected to https://github.com/dmaevsky/ellx_examples."
+      }
+    ],
+    [,
+      {
+        "value": "If you find errors or typos in the examples, feel free to clone this repo and submit PRs. Here's how to do it:"
+      }
+    ],
+    [,,
+      {
+        "value": "- Clone the repo, e.g. git clone git@github.com:dmaevsky/ellx_examples.git"
+      }
+    ],
+    [,,
+      {
+        "value": "- Make changes using Ellx, and download the changed document into the locally cloned directory ellx_examples"
+      }
+    ],
+    [,,
+      {
+        "value": "- git commit -a -m \"Found a typo\" && git push"
+      }
+    ],
+    [,,
+      {
+        "value": "- Submit a PR"
+      }
+    ],,
+    [,
+      {
+        "value": "This process illustrates how Ellx is designed from ground up to be perfectly source control friendly"
+      }
+    ],,
+    [,
+      {
+        "value": "<- Click on the icons next to the items in the repo explorer to see available actions"
+      }
+    ]
+  ]
 }
