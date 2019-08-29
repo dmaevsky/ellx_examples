@@ -8,9 +8,10 @@
     "func": "range(5).map(deg=>x=>range(deg).reduce(acc=>acc*x,1))",
     "power2": "func.map(f=>f(2))",
     "result": "func.map(f => gl.x.map(f).reduce((acc, y, i)=>acc + y*gl.w[i], 0))",
-    "det": "math.det(cauchy)",
     "n": "5",
     "cauchy": "range(n).map(i => range(n).map(j => 1 / (1 + i + j)))",
+    "math": "require('https://cdn.pika.dev/mathjs/v6')",
+    "det": "math.det(cauchy)",
     "ball": "{mass: 5, speed: 25}",
     "momentum": "b => b.mass * b.speed",
     "$2": "momentum(ball)"
@@ -181,20 +182,11 @@
           "width": 1
         }
       }
-    ],,,,,,,
+    ],,,,,,
     [,
       {
         "value": "Cachy matrix"
-      },,
-      {
-        "value": "Determinant"
       },
-      {
-        "value": 3.749295132526672e-12,
-        "node": "det"
-      }
-    ],
-    [,
       {
         "value": 5,
         "node": "n"
@@ -250,6 +242,26 @@
         }
       }
     ],,,,,,
+    [,
+      {
+        "value": "You can load any 3rd party external module published in ES2015 module format using a built-in require function, using dynamic import under the hood"
+      }
+    ],
+    [,
+      {
+        "value": "[Module https://cdn.pika.dev/mathjs/v6]",
+        "node": "math"
+      }
+    ],
+    [,
+      {
+        "value": "Determinant"
+      },
+      {
+        "value": 3.749295132526672e-12,
+        "node": "det"
+      }
+    ],,
     [,
       {
         "value": "Future development"

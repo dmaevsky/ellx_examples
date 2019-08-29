@@ -7,6 +7,10 @@
     "$1": "42 + (r+1)*r",
     "total": "Object.keys(sales).reduce((sum, name)=>sum + sales[name],0)",
     "meta": "{operator: { binary: { '+': (l, r)=>l+r }}}",
+    "patchMathJS": "require('https://dmaevsky.com/ellx_examples/patches/math.js').default",
+    "math": "patchMathJS(require('https://cdn.pika.dev/mathjs/v6'))",
+    "matrix": "math.matrix",
+    "complex": "math.complex",
     "rnorm": "matrix(r) * r",
     "c": "complex('1+2i')",
     "cconj": "~c",
@@ -124,17 +128,27 @@
     ],,
     [,
       {
-        "value": "For demo purposes the current Ellx release ships with MathJS bundled by default (https://mathjs.org/)"
+        "value": "Here we load the patch for MathJS's Complex and Matrix classes"
+      },,,,,
+      {
+        "value": "@@@func",
+        "node": "patchMathJS"
       }
     ],
     [,
       {
-        "value": "3 symbols are exposed in the global namespace: math = require('mathjs'), matrix = math.matrix, complex = math.complex"
+        "value": "[Module https://cdn.pika.dev/mathjs/v6]",
+        "node": "math"
       }
     ],
     [,
       {
-        "value": "math.type.Complex and math.type.Matrix constructors are patched in order to support Ellx operator overloading:"
+        "value": "@@@func",
+        "node": "matrix"
+      },
+      {
+        "value": "@@@func",
+        "node": "complex"
       }
     ],,
     [,
@@ -278,7 +292,7 @@
     ],
     [,
       {
-        "value": "My IP address is: 180.47.159.67",
+        "value": "My IP address is: 126.3.30.26",
         "node": "message"
       }
     ],
