@@ -85,12 +85,12 @@
     ],
     [,
       {
-        "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Ctrl-Alt-Down/Right shortcuts"
+        "value": "A node of the calculation graph can be any JS object, including a function, a map or an array. Maps (JS objects) and arrays may be expanded in 2d using Shift-Alt-Down/Right shortcuts"
       }
     ],
     [,
       {
-        "value": "Use Ctrl-Alt-Z/X to toggle left/top labels"
+        "value": "Use Shift-Alt-Z/X to toggle left/top labels"
       }
     ],,
     [,
