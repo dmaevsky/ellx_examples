@@ -1,48 +1,53 @@
 const ELLX_META = Symbol.for('~ellxMeta');
 const delay = t => new Promise(r => setTimeout(() => r(), t));
 
-class MousePos {
-  constructor(props) {
-    this.distance = 0;
-    this.update(props);
+const MousePos = throttle => {
+  throttle = throttle > 10 ? throttle : 10;
 
-    this.mouseMove = e => {
-      this.lastPos = { x: e.pageX, y: e.pageY }
-    }
+  return class {
+    constructor(props) {
+      this.count = 0;
+      this.update(props);
 
-    window.addEventListener('mousemove', this.mouseMove);
-  }
-
-  async *output() {
-    let pos = null;
-    while (true) {
-      await delay(this.throttle);
-
-      if (!this.lastPos) continue;
-
-      if (pos) {
-        let dx = this.lastPos.x - pos.x;
-        let dy = this.lastPos.y - pos.y;
-        let delta = Math.sqrt(dx * dx + dy * dy);
-        if (delta < 1) continue;
-
-        this.distance += delta;
+      this.mouseMove = e => {
+        this.lastPos = { x: e.pageX, y: e.pageY }
       }
-      pos = this.lastPos;
-      yield { ...pos, distance: this.distance };
+
+      window.addEventListener('mousemove', this.mouseMove);
     }
-  }
 
-  update({ throttle }) {
-    this.throttle = throttle > 10 ? throttle : 10;
-  }
+    async *output() {
+      let pos = null;
 
-  dispose() {
-    window.removeEventListener('mousemove', this.mouseMove);
+      while (true) {
+        await delay(throttle);
+
+        if (!this.lastPos || this.lastPos === pos) continue;
+        pos = this.lastPos;
+
+        yield {
+          dx: pos.x - this.x0,
+          dy: pos.y - this.y0,
+          count: ++this.count
+        };
+      }
+    }
+
+    update({ origin }) {
+      [this.x0, this.y0] = origin;
+    }
+
+    dispose() {
+      window.removeEventListener('mousemove', this.mouseMove);
+    }
   }
 }
 
-export const mousePos = throttle => ({
-  [ELLX_META]: { component: MousePos },
-  throttle
-});
+export const mousePos = throttle => {
+  const component = MousePos(throttle);
+
+  return (x0, y0) => ({
+    [ELLX_META]: { component },
+    origin: [x0, y0]
+  });
+}
