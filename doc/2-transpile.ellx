@@ -7,7 +7,7 @@
     "$1": "42 + (r+1)*r",
     "total": "Object.keys(sales).reduce((sum, name)=>sum + sales[name],0)",
     "meta": "{operator: { binary: { '+': (l, r)=>l+r }}}",
-    "patchMathJS": "require('https://dmaevsky.com/ellx_examples/patches/math.js').default",
+    "patchMathJS": "require('../scripts/math.js').default",
     "math": "patchMathJS(require('https://cdn.pika.dev/mathjs/v6'))",
     "matrix": "math.matrix",
     "complex": "math.complex",
@@ -16,7 +16,7 @@
     "cconj": "~c",
     "cc": "c*cconj",
     "delayed": "(expression, delay) => new Promise(resolve => setTimeout(() => resolve(expression()), delay))",
-    "x": "15",
+    "x": "42",
     "ms": "1000*(1+range(3))",
     "expr": "ms.map(delay=>delayed(()=>delay + x, delay))",
     "$5": "expr*expr",
@@ -46,31 +46,12 @@
     ],
     [,
       {
-        "value": 6,
         "node": "n"
       },
       {
-        "value": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5
-        ],
         "node": "r"
       },,,,,,
       {
-        "value": {
-          "Peter": {
-            "Jan": 10,
-            "Feb": 12
-          },
-          "John": {
-            "Jan": 22,
-            "Feb": 55
-          }
-        },
         "node": "sales",
         "expansion": {
           "vertical": true,
@@ -84,23 +65,11 @@
     ],
     [,,
       {
-        "value": [
-          42,
-          44,
-          48,
-          54,
-          62,
-          72
-        ],
         "node": "$1"
       }
     ],
     [,,,,,,,,
       {
-        "value": {
-          "Jan": 32,
-          "Feb": 67
-        },
         "node": "total",
         "expansion": {
           "vertical": false,
@@ -116,13 +85,6 @@
     ],
     [,
       {
-        "value": {
-          "operator": {
-            "binary": {
-              "+": "@@@func"
-            }
-          }
-        },
         "node": "meta"
       }
     ],,
@@ -131,54 +93,37 @@
         "value": "Here we load the patch for MathJS's Complex and Matrix classes"
       },,,,,
       {
-        "value": "@@@func",
         "node": "patchMathJS"
       }
     ],
     [,
       {
-        "value": "[Module https://cdn.pika.dev/mathjs/v6]",
         "node": "math"
       }
     ],
     [,
       {
-        "value": "@@@func",
         "node": "matrix"
       },
       {
-        "value": "@@@func",
         "node": "complex"
       }
     ],,
     [,
       {
-        "value": 55,
         "node": "rnorm"
       },
       {
-        "value": {
-          "re": 1,
-          "im": 2
-        },
         "node": "c"
       }
     ],
     [,,
       {
-        "value": {
-          "re": 1,
-          "im": -2
-        },
         "node": "cconj"
       }
     ],
     [,,
       {
-        "value": {
-          "re": 5,
-          "im": 0
-        },
         "node": "cc"
       }
     ],,
@@ -204,13 +149,11 @@
     ],
     [,
       {
-        "value": "@@@func",
         "node": "delayed"
       }
     ],
     [,,
       {
-        "value": 15,
         "node": "x"
       },
       {
@@ -230,11 +173,6 @@
     ],
     [,
       {
-        "value": [
-          1000,
-          2000,
-          3000
-        ],
         "node": "ms",
         "expansion": {
           "vertical": true,
@@ -243,11 +181,6 @@
         }
       },
       {
-        "value": [
-          1015,
-          2015,
-          3015
-        ],
         "node": "expr",
         "expansion": {
           "vertical": true,
@@ -256,11 +189,6 @@
         }
       },
       {
-        "value": [
-          1030225,
-          4060225,
-          9090225
-        ],
         "node": "$5",
         "expansion": {
           "vertical": true,
@@ -286,13 +214,11 @@
     ],
     [,
       {
-        "value": "https://ipinfo.io/ip",
         "node": "url"
       }
     ],
     [,
       {
-        "value": "My IP address is: 126.3.30.26",
         "node": "message"
       }
     ],

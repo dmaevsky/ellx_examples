@@ -20,7 +20,7 @@
     ],
     [,
       {
-        "value": "\"Examples on Github\" is a read-only repo, connected to https://github.com/dmaevsky/ellx_examples."
+        "value": "\"Examples\" is a read-only repo, cloned from https://github.com/dmaevsky/ellx_examples."
       }
     ],
     [,

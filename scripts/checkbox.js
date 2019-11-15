@@ -33,6 +33,7 @@ class Checkbox {
 
     target.appendChild(input);
     target.appendChild(label);
+
     Object.assign(target.style, {
       width: '100px',
       height: '20px',
