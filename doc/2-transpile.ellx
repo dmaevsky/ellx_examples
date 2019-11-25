@@ -15,10 +15,9 @@
     "c": "complex('1+2i')",
     "cconj": "~c",
     "cc": "c*cconj",
-    "delayed": "(expression, delay) => new Promise(resolve => setTimeout(() => resolve(expression()), delay))",
     "x": "42",
     "ms": "1000*(1+range(3))",
-    "expr": "ms.map(delay=>delayed(()=>delay + x, delay))",
+    "expr": "ms.map(ms => delay(ms).then(() => ms + x))",
     "$5": "expr*expr",
     "url": "'https://ipinfo.io/ip'",
     "message": "'My IP address is: ' + fetch(url).text().trim()"
@@ -141,17 +140,7 @@
       {
         "value": "If a result of any intermediate expression is a Promise it will be automatically waited for in the most efficient fashion: parallel calculations will still run in parallel"
       }
-    ],
-    [,
-      {
-        "value": "The following function calculates 'expression' after 'delay' in ms:"
-      }
-    ],
-    [,
-      {
-        "node": "delayed"
-      }
-    ],
+    ],,
     [,,
       {
         "node": "x"
