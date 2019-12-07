@@ -1,7 +1,7 @@
 const ELLX_META = Symbol.for('~ellxMeta');
 
 class Checkbox {
-  constructor(props, initState) {
+  constructor(props, { initState }) {
     this.value = !!initState;
     this.target = null;
     this.emit = null;
