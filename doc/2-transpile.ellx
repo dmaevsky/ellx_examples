@@ -79,7 +79,7 @@
     ],
     [,
       {
-        "value": "You can add operator overloading support to any existing class by adding a Symbol.for('~ellxMeta') field to it's prototype, e.g."
+        "value": "You can add operator overloading support to any existing class by adding __EllxMeta__ property to it's prototype, e.g."
       }
     ],
     [,

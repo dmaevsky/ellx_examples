@@ -1,9 +1,5 @@
-const ELLX_META = Symbol.for('~ellxMeta');
-
 export default function(math) {
-  math.Complex.prototype[ELLX_META] =
-  math.Matrix.prototype[ELLX_META] =
-  {
+  const meta = {
     operator: {
       binary: {
         '+': (lhs, rhs) => math.add(lhs, rhs),
@@ -18,5 +14,8 @@ export default function(math) {
       }
     }
   }
+  Object.defineProperty(math.Complex.prototype, '__EllxMeta__', { value: meta })
+  Object.defineProperty(math.Matrix.prototype, '__EllxMeta__', { value: meta })
+
   return math;
 }

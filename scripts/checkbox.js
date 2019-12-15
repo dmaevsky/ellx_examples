@@ -1,5 +1,3 @@
-const ELLX_META = Symbol.for('~ellxMeta');
-
 class Checkbox {
   constructor(props, { initState }) {
     this.value = !!initState;
@@ -51,6 +49,6 @@ class Checkbox {
 }
 
 export const checkbox = label => ({
-  [ELLX_META]: { component: Checkbox },
+  __EllxMeta__: { component: Checkbox },
   label
 });

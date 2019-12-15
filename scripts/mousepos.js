@@ -1,4 +1,3 @@
-const ELLX_META = Symbol.for('~ellxMeta');
 const delay = t => new Promise(r => setTimeout(() => r(), t));
 
 const MousePos = throttle => {
@@ -47,7 +46,7 @@ export const mousePos = throttle => {
   const component = MousePos(throttle);
 
   return (x0, y0) => ({
-    [ELLX_META]: { component },
+    __EllxMeta__: { component },
     origin: [x0, y0]
   });
 }
