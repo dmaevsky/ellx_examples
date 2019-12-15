@@ -14,8 +14,8 @@ export default function(math) {
       }
     }
   }
-  Object.defineProperty(math.Complex.prototype, '__EllxMeta__', { value: meta })
-  Object.defineProperty(math.Matrix.prototype, '__EllxMeta__', { value: meta })
+  if (!('__EllxMeta__' in math.Complex.prototype)) Object.defineProperty(math.Complex.prototype, '__EllxMeta__', { value: meta });
+  if (!('__EllxMeta__' in math.Matrix.prototype)) Object.defineProperty(math.Matrix.prototype, '__EllxMeta__', { value: meta })
 
   return math;
 }
