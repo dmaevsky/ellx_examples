@@ -17,6 +17,9 @@ const MousePos = throttle => {
 
     async *output() {
       let pos = null;
+      if (!this.lastPos) {
+        yield Object.assign(new Error(), { stale: true });
+      }
 
       while (true) {
         await delay(throttle);
