@@ -12,10 +12,11 @@ class Checkbox {
 
     if (this.target) {
       this.target.lastChild.innerText = this.labelText;
+      if (this.afterRender) this.afterRender();
     }
   }
 
-  render(target) {
+  render({ target, afterRender }) {
     let input = document.createElement('input');
     input.type = 'checkbox';
     input.id = 'checkbox' + Math.random();
@@ -33,11 +34,12 @@ class Checkbox {
     target.appendChild(label);
 
     Object.assign(target.style, {
-      width: '100px',
       height: '20px',
       padding: '2px'
     });
     this.target = target;
+    this.afterRender = afterRender;
+    if (afterRender) afterRender();
   }
 
   async *output() {
