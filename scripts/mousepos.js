@@ -1,6 +1,6 @@
 const delay = t => new Promise(r => setTimeout(() => r(), t));
 
-const MousePos = throttle => {
+export const MousePos = throttle => {
   throttle = throttle > 10 ? throttle : 10;
 
   return class {
@@ -43,13 +43,4 @@ const MousePos = throttle => {
       window.removeEventListener('mousemove', this.mouseMove);
     }
   }
-}
-
-export const mousePos = throttle => {
-  const component = MousePos(throttle);
-
-  return (x0, y0) => ({
-    __EllxMeta__: { component },
-    origin: [x0, y0]
-  });
 }

@@ -1,4 +1,4 @@
-class Checkbox {
+export class Checkbox {
   constructor(props, { initState }) {
     this.value = !!initState;
     this.target = null;
@@ -12,11 +12,10 @@ class Checkbox {
 
     if (this.target) {
       this.target.lastChild.innerText = this.labelText;
-      if (this.afterRender) this.afterRender();
     }
   }
 
-  render({ target, afterRender }) {
+  render(target) {
     let input = document.createElement('input');
     input.type = 'checkbox';
     input.id = 'checkbox' + Math.random();
@@ -38,8 +37,6 @@ class Checkbox {
       padding: '2px'
     });
     this.target = target;
-    this.afterRender = afterRender;
-    if (afterRender) afterRender();
   }
 
   async *output() {
@@ -49,8 +46,3 @@ class Checkbox {
     }
   }
 }
-
-export const checkbox = label => ({
-  __EllxMeta__: { component: Checkbox },
-  label
-});
